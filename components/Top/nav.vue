@@ -1,6 +1,10 @@
 <script setup>
 const props = defineProps({
-  itemsMenu: Array
+  itemsMenu: {
+    type: Array,
+    default: () => []
+    // required: true
+  }
 })
 
 onMounted(() => {

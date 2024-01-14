@@ -14,7 +14,7 @@ const menu = [
 
 <template>
   <div>
-      <TopNav :itemsMenu="menu"/>
+      <TopNav :itemsMenu="menu ? menu : []"/>
       <NuxtPage/>
   </div>
 </template>
