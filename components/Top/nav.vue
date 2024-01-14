@@ -1,3 +1,13 @@
+<script setup>
+const props = defineProps({
+  itemsMenu: Array
+})
+
+onMounted(() => {
+  console.log(props.itemsMenu);
+})
+</script>
+
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -14,8 +24,8 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
-        <NuxtLink to="/about" class="navbar-item">About (SPA)</NuxtLink>
+        <NuxtLink v-for="item of itemsMenu" :to="item.to" class="navbar-item">{{ item.name }}</NuxtLink>
+
         <a href="/about" class="navbar-item">About (MPA)</a>
 
 

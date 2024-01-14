@@ -1,6 +1,20 @@
+<script setup>
+const menu = [
+  {
+    "name": "Home",
+    "to":  "/"
+  },
+  {
+    "name": "About (SPA)",
+    "to":  "/about"
+  }
+]
+
+</script>
+
 <template>
   <div>
-      <TopNav/>
+      <TopNav :itemsMenu="menu"/>
       <NuxtPage/>
   </div>
 </template>
