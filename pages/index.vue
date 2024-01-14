@@ -1,5 +1,7 @@
 <script setup>
-
+useHead({
+  title: 'Burger King',
+})
 </script>
 <template>
   <!-- Page Header Start -->

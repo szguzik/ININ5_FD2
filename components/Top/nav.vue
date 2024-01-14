@@ -1,4 +1,6 @@
 <script setup>
+const obj = ref(null)
+const title = ref("")
 const props = defineProps({
   itemsMenu: {
     type: Array,
@@ -6,16 +8,24 @@ const props = defineProps({
     // required: true
   }
 })
+async function logData() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  obj.value = await response.json();
+  title.value = obj.value ? " - " + obj.value.title : "";
+  console.log(obj.value.title);
+}
 
 onMounted(() => {
   console.log(props.itemsMenu);
+
+  logData();
 })
 </script>
 
 <template>
   <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
-      <a href="index.html" class="navbar-brand">Burger <span>King</span></a>
+      <a href="index.html" class="navbar-brand">Burger <span>King{{ title }}</span></a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
