@@ -5,16 +5,27 @@ const menu = [
     "to":  "/"
   },
   {
-    "name": "About (SPA)",
-    "to":  "/about"
+    "name": "Feature",
+    "to":  "/feature"
+  },
+  {
+    "name": "Chef",
+    "to":  "/team"
+  },
+  {
+    "name": "Menu",
+    "to":  "/menu"
+  },
+  {
+    "name": "Booking",
+    "to":  "/booking"
   }
 ]
 
 </script>
 
 <template>
-  <div>
-      <TopNav :itemsMenu="menu ? menu : []"/>
+      <TopNav :items-menu="menu"/>
       <NuxtPage/>
-  </div>
+      <Footer/>
 </template>
